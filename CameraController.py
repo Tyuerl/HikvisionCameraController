@@ -170,7 +170,7 @@ class CameraController:
                 previousAngle = currentAngle
                 currentAngle = self.getCurrentAngleY()
                 diff = currentAngle - previousAngle
-                summTurn += diff
+                summTurn += abs(diff)
                 print(f"previous = {previousAngle}, curr = {currentAngle}, diff = {diff}, summ = {summTurn}")
             self.stopCameraMoving()
         elif deltaAngle > 0:
@@ -181,7 +181,7 @@ class CameraController:
                 previousAngle = currentAngle
                 currentAngle = self.getCurrentAngleY()
                 diff = previousAngle - currentAngle
-                summTurn += diff
+                summTurn += abs(diff)
                 print(f"previous = {previousAngle}, curr = {currentAngle}, diff = {diff}, summ = {summTurn}")
             self.stopCameraMoving()
 
